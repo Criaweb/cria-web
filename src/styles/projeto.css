@@ -1,0 +1,175 @@
+:root {
+            --cor-rosa: #F961CA;
+            --cor-preta: #000;
+            --cor-branca: #fff;
+            --cor-verde: #7FF224;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+            font-family: 'Bangers', cursive;
+            background-color: var(--cor-preta);
+            color: var(--cor-branca);
+            overflow-x: hidden;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        .projects-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .project {
+            position: relative;
+            width: 300px;
+            margin: 20px;
+            overflow: hidden;
+            border-radius: 8px;
+            background-color: var(--cor-branca);
+            box-shadow: 0 4px 6px rgba(171, 167, 167, 0.1);
+        }
+
+        .project-image {
+            position: relative;
+        }
+
+        .project-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.834);
+            color: var(--cor-branca);
+            opacity: 0;
+            visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            transition: opacity 0.3s ease, visibility 0.3s ease;
+        }
+
+        .project:hover .overlay, .project:focus .overlay {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .description {
+            margin-bottom: 15px;
+            padding: 0 10px;
+            font-size: 1.2rem;
+            color: var(--cor-branca);
+            letter-spacing: 2px;
+        }
+.icons a {
+   margin: 0 10px;
+}
+
+.icons img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+ }
+
+.icons img:hover {
+    transform: scale(1.2);
+}
+/* Estilizando os ícones */
+.icons {
+    display: flex;
+    gap: 20px; /* Espaçamento entre os ícones */
+}
+
+.icons a {
+    color: var(--cor-branca); /* Cor branca para os ícones */
+    font-size: 2rem; /* Tamanho dos ícones */
+    text-decoration: none; /* Remove o sublinhado */
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.icons a:hover {
+    transform: scale(1.2); /* Aumenta o ícone ao passar o mouse */
+    color: var(--cor-rosa); /* Muda a cor para rosa ao passar o mouse */
+}
+/* Estilo do botão Voltar */
+.back-btn {
+    background-color: var(--cor-rosa);
+    color: var(--cor-branca);
+    border: none;
+    border-radius: 17px;
+    padding: 10px 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.back-btn:hover {
+    background-color: var(--cor-verde); 
+}
+
+/* Estilos do rodapé */
+.footer {
+    display: flex;
+    justify-content: space-between; /* Distribui os itens com espaço entre eles */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    padding: 10px 20px; /* Um pouco de espaço interno */
+    background-color: var(--cor-preta); /* Cor de fundo do rodapé */
+    color: var(--cor-branca); /* Cor do texto */
+    font-size: 2rem; /* Tamanho da fonte */
+    border-top: 2px solid var(--cor-rosa); /* Uma linha fina no topo */
+}
+
+/* Estilo para o nome da empresa */
+.footer-left span {
+    font-weight: bold; /* Deixa o nome da empresa em negrito */
+}
+
+/* Estilo para o e-mail */
+.footer-right a {
+    color: var(--cor-branca); /* Cor do texto do e-mail */
+    text-decoration: none; /* Remove o sublinhado do link */
+    transition: color 0.3s ease; /* Transição suave de cor ao passar o mouse */
+}
+
+.footer-right a:hover {
+    color: var(--cor-rosa); /* Muda a cor do e-mail ao passar o mouse */
+}
+
+/* Responsividade: Ajustando o tamanho da fonte em telas menores */
+@media (max-width: 768px) {
+    .footer {
+        font-size: 1rem; /* Diminui o tamanho da fonte para telas pequenas */
+        padding: 10px; /* Ajusta o padding */
+    }
+}

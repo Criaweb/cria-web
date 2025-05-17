@@ -1,0 +1,149 @@
+:root {
+    --cor-rosa: #F961CA;
+    --cor-preta: #000;
+    --cor-branca: #fff;
+    --cor-verde: #7FF224;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Garantir que o body ocupe 100% da altura da tela e remover espaços extras */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    font-family: 'Bangers', cursive; 
+    background-color: #000; 
+}
+
+/* Estilo do botão Voltar */
+.back-btn {
+    background-color: var(--cor-rosa);
+    color: var(--cor-branca);
+    border: none;
+    border-radius: 17px;
+    padding: 10px 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 20px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+.back-btn:hover {
+    background-color: var(--cor-verde); 
+}
+
+/* Estilo da seção de serviços */
+.servicos {
+    color: #fff; /* Texto branco */
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.servicos h2 {
+    font-size: 3rem;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+}
+
+
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.card {
+    background-color: #333; 
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: scale(1.05); 
+}
+
+.card-content {
+    text-align: center;
+}
+
+.card-content i {
+    font-size: 3rem; 
+    margin-bottom: 20px; 
+    color: var(--cor-rosa); 
+}
+
+.card-content h3 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+    letter-spacing: 2px;
+    letter-spacing: 2px;
+}
+
+.card-content p {
+    font-size: 1rem;
+    line-height: 1.5;
+    letter-spacing: 2px;
+    letter-spacing: 2px;
+}
+
+
+@media (max-width: 1024px) {
+    .cards-container {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media (max-width: 768px) {
+    .cards-container {
+        grid-template-columns: 1fr; 
+    }
+
+    .servicos h2 {
+        font-size: 2rem; 
+        letter-spacing: 2px;
+    }
+
+    .card-content h3 {
+        font-size: 1.5rem; 
+        letter-spacing: 2px;
+    }
+
+    .card-content i {
+        font-size: 2rem; 
+    }
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: #000;
+    color: #fff;
+    font-size: 1rem;
+    border-top: 2px solid var(--cor-rosa); 
+}
+
+.footer-left span {
+    font-weight: bold;
+}
+
+.footer-right a {
+    color: #fff;
+    text-decoration: none; 
+}
+
+.footer-right a:hover {
+    color: var(--cor-rosa);
+}
