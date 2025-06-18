@@ -1,0 +1,153 @@
+:root {
+    --cor-rosa: #F961CA;
+    --cor-preta: #000;
+    --cor-branca: #fff;
+    --cor-verde: #7FF224;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Bangers', cursive;
+    background-color: var(--cor-preta);
+    color: var(--cor-preta);
+    overflow-x: hidden; /* Prevenir rolagem horizontal indesejada */
+}
+
+/* Avaliações */
+.avaliacoes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 40px;
+}
+
+/* Card de Avaliação */
+.avaliacao-card {
+    background-color: var(--cor-branca);
+    border-radius: 15px;
+    width: 300px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.avaliacao-card:hover {
+    transform: scale(1.05); /* Aumenta o card para chamar atenção */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Aumenta a sombra ao passar o mouse */
+}
+
+/* Quando o mouse sai, o card volta ao tamanho normal */
+.avaliacao-card:active {
+    transform: scale(1); /* Volta ao tamanho original quando clicado */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra mais suave ao clicar */
+}
+
+/* Foto do Avaliador */
+.foto {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 15px auto;
+    overflow: hidden;
+    border-radius: 50%;
+    border: 4px solid var(--cor-rosa);
+}
+
+.foto img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Conteúdo do Card */
+.conteudo .nome {
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: var(--cor-preta);
+    margin-bottom: 10px;
+}
+
+.conteudo .texto {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+    .avaliacoes {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    /* Carrossel automático */
+    .avaliacoes {
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .avaliacao-card {
+        animation: slide 17s infinite;
+    }
+
+    /* Animação de deslizamento para o carrossel */
+    @keyframes slide {
+        0% {
+            transform: translateY(0);
+        }
+        33% {
+            transform: translateY(-100%);
+        }
+        66% {
+            transform: translateY(-200%);
+        }
+        100% {
+            transform: translateY(0);
+        }
+    }
+}
+
+/* Estilos do rodapé */
+.footer {
+    display: flex;
+    justify-content: space-between; /* Distribui os itens com espaço entre eles */
+    align-items: center; /* Alinha os itens verticalmente ao centro */
+    padding: 10px 20px; /* Um pouco de espaço interno */
+    background-color: var(--cor-preta); /* Cor de fundo do rodapé */
+    color: var(--cor-branca); /* Cor do texto */
+    font-size: 2rem; /* Tamanho da fonte */
+    border-top: 2px solid var(--cor-rosa); /* Uma linha fina no topo */
+}
+
+/* Estilo para o nome da empresa */
+.footer-left span {
+    font-weight: bold; /* Deixa o nome da empresa em negrito */
+    color: var(--cor-verde);
+}
+
+/* Estilo para o e-mail */
+.footer-right a {
+    color: var(--cor-branca); /* Cor do texto do e-mail */
+    text-decoration: none; /* Remove o sublinhado do link */
+    transition: color 0.3s ease; /* Transição suave de cor ao passar o mouse */
+}
+
+.footer-right a:hover {
+    color: var(--cor-rosa); /* Muda a cor do e-mail ao passar o mouse */
+}
+
+/* Responsividade: Ajustando o tamanho da fonte em telas menores */
+@media (max-width: 768px) {
+    .footer {
+        font-size: 1rem; /* Diminui o tamanho da fonte para telas pequenas */
+        padding: 10px; /* Ajusta o padding */
+    }
+}
