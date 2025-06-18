@@ -40,77 +40,32 @@ main {
 .quem-somos {
     width: 100%;
     position: relative;
-    height: auto; /* Permite que a seção tenha altura variável */
+    margin-top: 0; /* Remover qualquer espaço superior extra */
 }
 
 /* Imagem de fundo */
 .imagem {
-    background-image: url('../img/1h.jpg'); /* Substitua com o caminho correto */
-    background-size: cover; /* Faz a imagem cobrir o fundo sem perder a proporção */
-    background-position: top center; /* Garantindo que a parte superior da imagem seja visível */
-    background-repeat: no-repeat; /* Impede que a imagem se repita */
+    background: var(--cor-rosa); /* Cor de fundo rosa */
     width: 100%;
     height: 50vh; /* Ajustada para 50% da altura da tela */
-    object-fit: cover; /* Garante que a imagem ocupe todo o espaço */
-}
-/* Estilos para a seção de ícones */
-.social-icons {
-    display: flex;
-    justify-content: center; /* Centraliza os ícones horizontalmente */
-    align-items: center; /* Centraliza os ícones verticalmente */
-    gap: 20px; /* Espaçamento entre os ícones */
-    margin-top: 30px; /* Margem superior para separar dos outros conteúdos */
+    display: flex; /* Utiliza flexbox para centralizar a imagem */
+    justify-content: center; /* Alinha horizontalmente ao centro */
+    align-items: center; /* Alinha verticalmente ao centro */
+    padding-top: 0; /* Remove qualquer padding superior extra */
 }
 
-.social-icon {
-    font-size: 3rem; /* Tamanho dos ícones */
-    color: var(--cor-preta); /* Cor dos ícones */
-    transition: color 0.3s ease;
-    transition: transform 0.3s ease;
-}
-
-.social-icon:hover {
-    color: var(--cor-rosa);
-    transform: scale(1.08);
-}
-
-/* Responsividade: para telas menores */
-@media (max-width: 768px) {
-    .social-icons {
-        gap: 15px; /* Menos espaço entre os ícones em telas menores */
-    }
-
-    .social-icon {
-        font-size: 1.5rem; /* Ícones menores em telas pequenas */
-    }
-}
-
-.links-section {
-    display: flex;
-    flex-direction: column;
-    gap: 0px; /* Reduzindo o gap para zero */
-    padding: 0; /* Garantindo que não haja padding */
-    margin: 0; /* Removendo margens extras */
-    width: 100%;
-}
-
-.link-item img {
-    display: block; /* Remover qualquer comportamento de imagem inline */
-    width: 100%; /* A imagem ocupa 100% da largura do container */
+/* Imagem dentro do contêiner com borda arredondada */
+.imagem img {
+    max-width: 80%; /* Garante que a imagem não ultrapasse o contêiner */
     height: auto; /* Mantém a proporção da imagem */
-    margin: 0; /* Remove qualquer margem ao redor da imagem */
-    padding: 0; /* Remove padding que pode ser adicionado */
+    border-radius: 15px; /* Borda arredondada */
+    border: 6px solid var(--cor-branca); /* Borda branca ao redor da imagem */
 }
 
-
-
-/* Responsividade: telas menores */
-@media screen and (max-width: 768px) {
-    .imagem {
-        height: 50vh; /* Ajusta a altura para telas menores */
-        background-size: cover; /* A imagem não será cortada */
-        background-position: center center; /* Centraliza a imagem */
-        background-repeat: no-repeat; /* Impede que a imagem se repita */
+/* Responsividade: Ajustando a imagem para telas menores */
+@media (max-width: 768px) {
+    .imagem img {
+        max-width: 75%; /* Ajusta o tamanho da imagem para telas menores */
     }
 }
 
@@ -146,46 +101,111 @@ span {
 /* Responsividade */
 @media screen and (max-width: 768px) {
     .texto h2 {
-        font-size: 2rem;
+        font-size: 2.5rem;
         letter-spacing: 2px;
     }
 
     .texto p {
-        font-size: 1rem;
+        font-size: 1.5rem;
         letter-spacing: 2px;
     }
 }
 
-/* Links section - centralizando os links em coluna */
-.links-section {
+/* Estilos para a seção de ícones */
+.social-icons {
     display: flex;
-    flex-direction: column;
-    gap: 2px; /* Reduzir o espaço entre os elementos */
-    padding: 0;
-    margin: 0;
+    justify-content: center; /* Centraliza os ícones horizontalmente */
+    align-items: center; /* Centraliza os ícones verticalmente */
+    gap: 20px; /* Espaçamento entre os ícones */
+    margin-top: 30px; /* Margem superior para separar dos outros conteúdos */
 }
 
-/* Estilo para cada item de link */
+.social-icon {
+    font-size: 3rem; /* Tamanho dos ícones */
+    color: var(--cor-preta); /* Cor dos ícones */
+    transition: color 0.3s ease;
+    transition: transform 0.3s ease;
+}
+
+.social-icon:hover {
+    color: var(--cor-rosa);
+    transform: scale(1.08);
+}
+
+/* Responsividade: para telas menores */
+@media (max-width: 768px) {
+    .social-icons {
+        gap: 18px; /* Menos espaço entre os ícones em telas menores */
+    }
+
+    .social-icon {
+        font-size: 2rem; /* Ícones menores em telas pequenas */
+    }
+}
+
+/* Estilo para os itens de imagem */
 .link-item {
-    width: 80%; /* Definindo a largura das imagens */
-    max-width: 600px; /* Limita a largura máxima das imagens */
-    margin: 0 auto; /* Garante que os itens fiquem centralizados */
+    width: 80%; /* Largura padrão para desktop */
+    max-width: 600px; /* Limita a largura máxima para não ficar muito grande */
+    margin: 0 auto; /* Garante que as imagens fiquem centralizadas */
 }
 
 /* Estilo das imagens */
 .link-item img {
-    width: 100%; /* Faz a imagem ocupar 100% da largura do seu container */
-    height: auto; /* Mantém a proporção da imagem */
-    transition: transform 0.3s ease; /* Transição suave no efeito de hover */
+    width: 100%; /* As imagens ocupam 100% da largura do container */
+    height: auto; /* Mantém a proporção das imagens */
+    transition: transform 0.3s ease; /* Suaviza o efeito de hover */
 }
 
-/* Efeito de hover */
+/* Efeito de hover para aumentar as imagens */
 .link-item img:hover {
     transform: scale(1.05); /* Aumenta um pouco o tamanho da imagem quando o mouse passa em cima */
 }
 
-/* Responsividade: tela pequena */
+/* Responsividade: Ajustes para telas menores (mobile) */
 @media (max-width: 768px) {
+    .link-item {
+        width: 90%; /* Ajusta a largura para telas menores */
+        max-width: none; /* Remove o limite máximo de largura */
+    }
+
+    .link-item img {
+        width: 100%; /* Garante que as imagens ocuparam 100% da largura do container */
+        margin: 0 auto; /* Garante que as imagens fiquem centralizadas */
+    }
+}
+
+/* Responsividade: Ajustes para telas muito pequenas (telas menores que 480px) */
+@media (max-width: 480px) {
+    .link-item {
+        width: 100%; /* As imagens ocuparão 100% da largura da tela em dispositivos muito pequenos */
+    }
+
+    .link-item img {
+        width: 100%; /* Garante que as imagens ocupem 100% da largura */
+        height: auto; /* Mantém a proporção das imagens */
+    }
+}
+
+.links-section {
+    display: flex;
+    flex-direction: column;
+    gap: 0px; /* Reduzindo o gap para zero */
+    padding: 0; /* Garantindo que não haja padding */
+    margin: 0; /* Removendo margens extras */
+    width: 100%;
+}
+
+.link-item img {
+    display: block; /* Remover qualquer comportamento de imagem inline */
+    width: 100%; /* A imagem ocupa 100% da largura do container */
+    height: auto; /* Mantém a proporção da imagem */
+    margin: 0; /* Remove qualquer margem ao redor da imagem */
+    padding: 0; /* Remove padding que pode ser adicionado */
+}
+
+/* Responsividade: telas menores */
+@media screen and (max-width: 768px) {
     .link-item {
         width: 90%; /* Ajusta a largura para telas menores */
     }
@@ -227,6 +247,7 @@ span {
 /* Estilo para o nome da empresa */
 .footer-left span {
     font-weight: bold; /* Deixa o nome da empresa em negrito */
+    color: var(--cor-verde);
 }
 
 /* Estilo para o e-mail */
