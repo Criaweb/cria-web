@@ -58,14 +58,15 @@ main {
 .imagem img {
     max-width: 100%; /* Garante que a imagem não ultrapasse o contêiner */
     height: auto; /* Mantém a proporção da imagem */
-    border-radius: 15px; /* Borda arredondada */
-    border: 6px solid var(--cor-branca); /* Borda branca ao redor da imagem */
+    border-radius: 25px; /* Borda arredondada */
+    border: 8px solid var(--cor-branca); /* Borda branca ao redor da imagem */
 }
 
 /* Responsividade: Ajustando a imagem para telas menores */
 @media (max-width: 768px) {
     .imagem img {
-        max-width: 75%; /* Ajusta o tamanho da imagem para telas menores */
+        max-width: 85%; /* Ajusta o tamanho da imagem para telas menores */
+        height: 58vh;
     }
 }
 
