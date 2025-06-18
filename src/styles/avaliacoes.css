@@ -57,13 +57,29 @@ body {
     margin: 0 auto 15px auto;
     overflow: hidden;
     border-radius: 50%;
-    border: 4px solid var(--cor-rosa);
+    border: 2px solid var(--cor-rosa);
 }
 
 .foto img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+}
+
+/* Estilizando as estrelas */
+.avaliacao-estrelas {
+    margin-top: 10px; /* Espaço acima das estrelas */
+}
+
+.estrela {
+    font-size: 1.5rem; /* Tamanho das estrelas */
+    color: gold; /* Cor das estrelas preenchidas */
+    margin-right: 3px; /* Espaço entre as estrelas */
+}
+
+/* Estilo da estrela vazia */
+.estrela:not(.preenchida) {
+    color: #ccc; /* Cor das estrelas vazias */
 }
 
 /* Conteúdo do Card */
@@ -87,18 +103,12 @@ body {
         gap: 20px;
     }
 
-    /* Carrossel automático */
-    .avaliacoes {
-        display: flex;
-        flex-direction: column;
-        overflow: hidden;
-    }
-
+    /* Remover o carrossel de animação */
     .avaliacao-card {
-        animation: slide 17s infinite;
+        animation: none; /* Removido o efeito de carrossel */
     }
 
-    /* Animação de deslizamento para o carrossel */
+    /* Não adicionar animação de deslizamento no mobile */
     @keyframes slide {
         0% {
             transform: translateY(0);
@@ -114,6 +124,31 @@ body {
         }
     }
 }
+
+/* Estilo do botão Voltar */
+.back-btn {
+    background-color: var(--cor-rosa);
+    color: var(--cor-branca);
+    border: none;
+    border-radius: 17px;
+    padding: 10px 40px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 20px auto; /* Centraliza o botão e dá espaço ao redor */
+    display: block; /* Torna o botão um elemento de bloco para centralizar */
+    text-align: center;
+    /* Ajusta a posição acima das avaliações, se necessário */
+    margin-top: 40px; /* Ajuste a margem superior conforme necessário */
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+    .back-btn {
+        margin-top: 20px; /* Menos margem no mobile */
+    }
+}
+
 
 /* Estilos do rodapé */
 .footer {

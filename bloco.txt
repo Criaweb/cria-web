@@ -1,62 +1,14 @@
 email da empresa: criaaweb@gmail.com
 
+preenchimento das estrelas ok ? 
+
+<div class="avaliacao-estrelas">
+                <div class="avaliacao-estrelas">
+                    <span class="estrela">&#9733;</span> <!-- Estrela cheia -->
+                    <span class="estrela">&#9733;</span> <!-- Estrela cheia -->
+                    <span class="estrela">&#9734;</span> <!-- Estrela vazia -->
+                    <span class="estrela">&#9734;</span> <!-- Estrela vazia -->
+                    <span class="estrela">&#9734;</span> <!-- Estrela vazia -->
+                </div>
 
 
-avaliações ok ? 
-
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Avaliações do Google</title>
-    <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_API_KEY&libraries=places"></script>
-    <link rel="stylesheet" href="avaliacoes.css">
-</head>
-<body>
-
-    <section class="avaliacoes" id="avaliacoes">
-        <!-- As avaliações serão injetadas aqui via JavaScript -->
-    </section>
-
-    <script>
-        function initMap() {
-            var service = new google.maps.places.PlacesService(document.createElement('div'));
-            
-            // O Place ID do seu negócio (você pode obter o ID do Google Maps)
-            var placeId = 'ChIJzV1fKoO5zJQR2omaxk6Aga4';  // Substitua com o Place ID real
-            
-            service.getDetails({
-                placeId: placeId
-            }, function(place, status) {
-                if (status === google.maps.places.PlacesServiceStatus.OK) {
-                    var reviewsContainer = document.getElementById('avaliacoes');
-                    
-                    place.reviews.forEach(function(review) {
-                        var reviewCard = document.createElement('div');
-                        reviewCard.className = 'avaliacao-card';
-                        
-                        // Foto do avaliador (se disponível)
-                        var photo = review.profile_photo_url ? `<img src="${review.profile_photo_url}" alt="Foto de ${review.author_name}">` : '';
-                        
-                        reviewCard.innerHTML = `
-                            <div class="foto">${photo}</div>
-                            <div class="conteudo">
-                                <p class="nome">${review.author_name}</p>
-                                <p class="texto">${review.text}</p>
-                                <p class="stars">Avaliação: ${review.rating} estrelas</p>
-                            </div>
-                        `;
-                        
-                        reviewsContainer.appendChild(reviewCard);
-                    });
-                }
-            });
-        }
-
-        // Inicializa o mapa e pega as avaliações
-        window.onload = initMap;
-    </script>
-
-</body>
-</html>
